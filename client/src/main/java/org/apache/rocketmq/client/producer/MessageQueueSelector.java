@@ -21,5 +21,13 @@ import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.common.message.MessageQueue;
 
 public interface MessageQueueSelector {
+    /**
+     * 选择哪个队列发送
+     * 哪个队列都行，就看策略
+     * @param mqs
+     * @param msg
+     * @param arg
+     * @return
+     */
     MessageQueue select(final List<MessageQueue> mqs, final Message msg, final Object arg);
 }
